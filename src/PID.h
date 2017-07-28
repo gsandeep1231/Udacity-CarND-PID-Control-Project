@@ -17,6 +17,10 @@ public:
   double Ki;
   double Kd;
 
+  double prev_cte;
+  double curr_cte;
+  double total_cte;
+
   /*
   * Constructor
   */
