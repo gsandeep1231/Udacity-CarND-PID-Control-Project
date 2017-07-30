@@ -18,6 +18,7 @@ Below video shows demonstration of using a PID controller:<br>
 https://youtu.be/gHMAV1KD_kU
 
 ## How the final hyperparameters were chosen.
+
 I started off with the initial parameters from the lecture, with tauP=0.2, tauD=3.0, tauI=0.004. This already gave pretty good results and with some minor adjustments to these parameters I was able to get good parameters for the final PID controller with tauP=0.15, tauD=3.0, tauI=0.004. With this the car is able to drive around the track without touching the sides. Below is the video demonstrating this:<br>
 https://youtu.be/gHMAV1KD_kU <br>
 However in cases when the initial parameters don't yield a good result, we can use twiddle approach to achieve to desirable hyperparameters as implemented in the lectures.
