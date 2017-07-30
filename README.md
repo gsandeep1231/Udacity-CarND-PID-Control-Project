@@ -2,17 +2,17 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ## Effect of each of the P, I, D components in the implementation.
-###P Controller
+<b>P Controller</b><br>
 With only <b>Proportional</b> component, the output varies proportional to the CTE, which is the distance of the vehicle from the center of the road. It is the main component controlling the steering of the vehicle. However over time, the output overshoots and there will be many oscillations around the desired output. This will cause the car to keep swaying back and forth the middle of the road.
 Below video shows demonstration of just using a P controller:
 https://youtu.be/E9rhI3UxCqg
 
-###PD Controller
+<b>PD Controller</b><br>
 Adding a <b>Differential</b> component to the filter improves the behaviour of the model. It prevents overshoot of the vehicle around the center of the road. Steering control of the vehicle is much smoother as it approaches the center, and it stays very close to the middle of the road.
 Below video shows demonstration of using a PD controller:
 https://youtu.be/x2WA8fk8KYs
 
-###PID Controller
+<b>PID Controller</b><br>
 Adding an <b>Integral</b> component helps counteract the bias in CTE that prevents the vehicle from reaching the center of the road. In our case since there is no bias, there is not much difference in the behaviour of the car between PD and PID controllers.
 Below video shows demonstration of using a PID controller:
 https://youtu.be/gHMAV1KD_kU
