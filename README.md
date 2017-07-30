@@ -3,24 +3,23 @@ Self-Driving Car Engineer Nanodegree Program
 
 ## Effect of each of the P, I, D components in the implementation.
 <b>P Controller</b><br>
-With only <b>Proportional</b> component, the output varies proportional to the CTE, which is the distance of the vehicle from the center of the road. It is the main component controlling the steering of the vehicle. However over time, the output overshoots and there will be many oscillations around the desired output. This will cause the car to keep swaying back and forth the middle of the road.
-Below video shows demonstration of just using a P controller:
+With only <b>Proportional</b> component, the output varies proportional to the CTE, which is the distance of the vehicle from the center of the road. It is the main component controlling the steering of the vehicle. However over time, the output overshoots and there will be many oscillations around the desired output. This will cause the car to keep swaying back and forth the middle of the road.<br>
+Below video shows demonstration of just using a P controller:<br>
 https://youtu.be/E9rhI3UxCqg
 
 <b>PD Controller</b><br>
-Adding a <b>Differential</b> component to the filter improves the behaviour of the model. It prevents overshoot of the vehicle around the center of the road. Steering control of the vehicle is much smoother as it approaches the center, and it stays very close to the middle of the road.
-Below video shows demonstration of using a PD controller:
+Adding a <b>Differential</b> component to the filter improves the behaviour of the model. It prevents overshoot of the vehicle around the center of the road. Steering control of the vehicle is much smoother as it approaches the center, and it stays very close to the middle of the road.<br>
+Below video shows demonstration of using a PD controller:<br>
 https://youtu.be/x2WA8fk8KYs
 
 <b>PID Controller</b><br>
-Adding an <b>Integral</b> component helps counteract the bias in CTE that prevents the vehicle from reaching the center of the road. In our case since there is no bias, there is not much difference in the behaviour of the car between PD and PID controllers.
-Below video shows demonstration of using a PID controller:
+Adding an <b>Integral</b> component helps counteract the bias in CTE that prevents the vehicle from reaching the center of the road. In our case since there is no bias, there is not much difference in the behaviour of the car between PD and PID controllers.<br>
+Below video shows demonstration of using a PID controller:<br>
 https://youtu.be/gHMAV1KD_kU
 
 ## How the final hyperparameters were chosen.
-I started off with the initial parameters from the lecture, with tauP=0.2, tauD=3.0, tauI=0.004. This already gave pretty good results and with some minor adjustments to these parameters I was able to get good parameters for the final PID controller with tauP=0.15, tauD=3.0, tauI=0.004. With this the car is able to drive around the track without touching the sides. Below is the video demonstrating this:
-https://youtu.be/gHMAV1KD_kU
-
+I started off with the initial parameters from the lecture, with tauP=0.2, tauD=3.0, tauI=0.004. This already gave pretty good results and with some minor adjustments to these parameters I was able to get good parameters for the final PID controller with tauP=0.15, tauD=3.0, tauI=0.004. With this the car is able to drive around the track without touching the sides. Below is the video demonstrating this:<br>
+https://youtu.be/gHMAV1KD_kU <br>
 However in cases when the initial parameters don't yield a good result, we can use twiddle approach to achieve to desirable hyperparameters as implemented in the lectures.
 ---
 
